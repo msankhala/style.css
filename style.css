@@ -1,0 +1,47 @@
+@media screen and (max-width: 960px) {
+
+}
+
+body {
+	background: url(image.jpg) no-repeat;
+	background-size: 100%;
+}
+
+@font-face {
+	font-family: Blackout;
+	src: url("assests/blackout.ttf") format("truetype");
+}
+
+#container {
+	margin: 0 auto;
+}
+
+/*There’s all kinds of float clearing solutions and hacks out there, but one pure and simple way to clear your floats is to simply use the overflow: hidden; declaration on the container of your floated elements. It doesn’t add a load of garbage to your stylesheet and it gets the job done in 90% of scenarios.
+*/
+.container {
+	overflow: hidden;
+}
+
+/*For those float clearing situations where overflow: hidden; doesn’t work, the best alternative is the clearfix technique. Remember you don’t have to use the clearfix class name, your could target this code to any of your HTML elements individually.*/
+.clearfix:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+}
+/*PNG images used to be required for creating any kind of transparency effects in web design, but thanks to another advance in CSS transparency can now be created with the help of the RGBa color mode. Using RGBa in place of a hex value allows you to select a colour using its red, green and blue channels as well as setting an alpha level, such as 0.5 for 50% opacity.*/
+.btn {
+	color: rgba(0,0,0,0.5);
+}
+/*The input[type="text"] selector and advanced selectors as a whole are great for taking your CSS skills from intermediate to expert. Attribute selectors in particular are extremely useful for styling elements without the need for additional classes. What about using attribute selectors to target the submit version of an input element or add an icon to external links?*/
+input[type="text"] {
+	width: 200px;
+}
+/*If I’m honest I’ve yet to find a use for CSS transform properties in a real design project, but the ability to manipulate HTML elements without Javascript is so cool it makes these properties worth remembering! Combine transform properties with CSS transitions to create some fun animation effects.*/
+.title {
+	transform: rotate(30deg);
+}
+/*Nothing can spoil a design more than seeing a huge dotted outline spanning across the whole page when you click a link element. The a {outline: none;} declaration will remove this, but for accessibility don’t forget to also add :focus states to your links. If you don’t mind seeing the dotted border but wish it didn’t span the whole screen, just add a {overflow: auto; } to your stylesheet instead.*/
+a {outline: none;}
